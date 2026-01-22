@@ -1,4 +1,4 @@
-def deploy(String Project, String ImageTag, String dockerhubuser){
+def call(String Project, String ImageTag, String dockerhubuser){
     echo "Deploying the code..."
     withCredentials([usernamePassword('credentialsId': "dockerHubCred", passwordVariable:"dockerHubPass", usernameVariable: "dockerHubUser")]){
 		      sh """
