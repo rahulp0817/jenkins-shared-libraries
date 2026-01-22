@@ -4,7 +4,6 @@ def deploy(String Project, String ImageTag, String dockerhubuser){
 		      sh """
               echo "${dockerHubPass}" | docker login -u "${dockerHubUser}" --password-stdin
              """
-		      sh "docker image tag webrtc-app:latest ${env.dockerHubUser}/webrtc-app:latest"
-		      sh "docker push ${env.dockerHubUser}/${Project}:${ImageTag}"
     }
+	sh "docker push ${env.dockerHubUser}/${Project}:${ImageTag}"
 }
