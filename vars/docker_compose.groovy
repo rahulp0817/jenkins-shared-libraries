@@ -1,4 +1,5 @@
-def deploy(){
-  echo "Deploying the code..."
-  sh "docker-compose down && docker-compose up -d"
+def call() {
+    echo "Deploying application using Docker Compose"
+    sh "docker compose down"
+    sh "docker compose up -d --build"
 }
